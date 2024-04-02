@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/HP/OneDrive/Desktop/DSA/Data-Structure/LinkedList",
-      "program": "c:/Users/HP/OneDrive/Desktop/DSA/Data-Structure/LinkedList/build/Debug/outDebug",
+      "cwd": "c:/Users/HP/OneDrive/Desktop/DSA/Data-Structure/DS-Linked-List",
+      "program": "c:/Users/HP/OneDrive/Desktop/DSA/Data-Structure/DS-Linked-List/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
