@@ -31,10 +31,10 @@ node *arr2LL( vector<int> &arr){
 
 }
 node *print (node *head){
-    node *temp  = head;
-    while(temp!=nullptr){
-        cout<<temp->data<<" ";
-        temp = temp->next;
+    node *tem  = head;
+    while(tem!=nullptr){
+        cout<<tem->data<<" ";
+        tem = tem->next;
     }
 }
 
@@ -44,7 +44,6 @@ node *del(node *head){
     head->prev  = nullptr;
     free(temp);
     return head;
-
 }
 node *delTail(node* head){
     node *temp = head;
@@ -57,19 +56,45 @@ node *delTail(node* head){
     return head;
 }
 
+node *delkth(node *head,int k){
+    if(head==NULL) return NULL;
+    node * temp = head;
+    int cnt = 0;
+    while (temp!=nullptr){
+        cnt++;
+        if(cnt==k){
+            break;
+        }
+        temp = temp->next;
+    }
+    node *back = temp->prev;
+    node *front = temp->next;
+    if(back==nullptr&&front==nullptr){
+        return NULL;
+    }
+    if(back==NULL){
+       return del(head);
+    } 
+    if(front==nullptr){
+        return delTail(head);
+    }
+    back->next = front;
+    front->prev = back;
+    temp->next = nullptr;
+    temp->prev = nullptr;
+    free(temp);
+
+ return head;
+}
+
 int main(){
 
  vector<int> v = {10,20,30,40,50};
 
 
  node *head = arr2LL(v);
- print(del(head));
- 
- 
-
-
- //cout<<tailFind(head);
-
+ node *temp = delkth(head,5);
+ print(temp);
 
 
 
